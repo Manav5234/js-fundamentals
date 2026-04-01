@@ -38,35 +38,45 @@ console.log(marks.includes(50)); // false
 
 //assignment
 
-let no=[1,6,7,3,5,3];
+// assignment
+
+let no = [1, 6, 7, 3, 5, 3];
+
 function findMin(arr) {
-    let max = arr[0]; 
-    for (let num of no) {
-        if (num <max) {
-            max = num;
+    let min = arr[0]; 
+    for (let num of arr) {   // use arr, not no
+        if (num < min) {
+            min = num;
         }
     }
-    return max;
+    return min;
 }
-console.log(findMax(no)); 
-let b=[45, 78, 90, 55, 62, 38, 88];
+console.log(findMin(no));   // function name fixed
 
-function greaterth60(b){
-    let count=0;
-    for(let i of b){
-        if(i>=60){
+
+let b = [45, 78, 90, 55, 62, 38, 88];
+
+function greaterth60(arr){
+    let count = 0;
+    for(let i of arr){
+        if(i >= 60){
             count++;
         }
     }
     return count;
 }
 console.log(greaterth60(b));
-let dupl=[1, 2, 2, 3, 3, 3, 4];
-let remo=[];
-function duplicateremove(a,remo){
-    for(let i of a){
-        if(a.include(i)===false){
+
+
+let dupl = [1, 2, 2, 3, 3, 3, 4];
+
+function duplicateremove(arr){
+    let remo = [];
+    for(let i of arr){
+        if(!remo.includes(i)){   // check in remo, not arr
             remo.push(i);
         }
     }
+    return remo;
 }
+console.log(duplicateremove(dupl));
