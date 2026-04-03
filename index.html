@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Practice</title>
 </head>
 <body>
-    <!-- <script src="functions.js"></script>
-    <script src="1.js"></script> -->
-    <script src="objects.js"></script>
-    <p>hello</p>
+    <h1 id="heading">Hello World</h1>
+    <p id="para">This is a paragraph</p>
+    <button id="btn">Click me</button>
+    <ul id="skill"></ul>
+    <button id="btn2">Click me</button>
+
+    <script>
+            // Change text content
+    let heading = document.getElementById("heading");
+    heading.textContent = "Hello Manav";  // changes what you see on screen
+    // 
+        // Change CSS styles
+    heading.style.color = "blue";
+    heading.style.fontSize = "40px";
+
+    // Change multiple things
+    let para = document.getElementById("para");
+    para.textContent = "I am learning DOM manipulation";
+    para.style.backgroundColor = "yellow";
+    para.style.padding = "10px";
+    let btn = document.getElementById("btn");
+
+    // Run a function when button is clicked
+    btn.addEventListener("click", function() {
+        if(heading.style.color=="red"){
+            btn.addEventListener("click", heading.style.color="blue"
+                 ,  heading.textContent = "You clicked the button again!    "
+            )
+        }
+        heading.textContent = "You clicked the button!";
+        heading.style.color = "red";
+    });
+    </script>
+    <ul id="list"></ul>
+
+<script>
+    let list = document.getElementById("list");
+
+    // Create a new element
+    let newItem = document.createElement("li");
+    newItem.textContent = "First item";
+
+    // Add it to the page
+    list.appendChild(newItem);
+
+    // Do it with a loop — add 5 items
+    let fruits = ["Mango", "Banana", "Apple", "Grapes", "Orange"];
+
+    for(let fruit of fruits) {
+        let li = document.createElement("li");
+        li.textContent = fruit;
+        list.appendChild(li);
+    }
+</script>
+<script src="dom.js"></script>
 </body>
 </html>
